@@ -1,8 +1,14 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import rickandmortylogo from "../../img/rickandmortylogo.png";
+import SearchResult from "../pages/SearchResult";
 
 const NavBar = () => {
+    const [searchTerm, setSearchTerm] = useState("");
+    function handleChange(e) {
+        setSearchTerm(e.target.value)
+    }
+
     return (
             <nav className="container-fluid p-0">
                 <div className="row align-items-center m-0">
@@ -12,9 +18,12 @@ const NavBar = () => {
                         </Link>
                     </div>
                     <div className="col">
-                        <input type="text" placeholder="Search item..." id="search-bar"></input>
+                        <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search item..." className="me-3" id="search-bar"></input>
+                        <Link to={searchTerm ? `/searchresult/${searchTerm}` : "*"}>
+                            <button type="button" className="btn" id="search-btn">Search</button>
+                        </Link>
                     </div>
-                    <div className="col d-flex justify-content-end">
+                    <div className="col-3 d-flex justify-content-end">
                         <Link to={"/characters"}>
                             <button className="btn">Characters</button>
                         </Link>

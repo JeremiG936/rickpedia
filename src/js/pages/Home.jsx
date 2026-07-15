@@ -1,15 +1,16 @@
 import React from "react";
 import Card from "../components/Card";
-import { getRandomIds } from "../functions/Misc";
-import { getSettledPromised } from "../functions/FetchData";
+import { getRandomIds } from "../functions/Misc.jsx";
+import { getSettledPromises, fetchCharacterData } from "../functions/FetchData.jsx";
 
 const randomIds = getRandomIds();
-const settledPromises = await getSettledPromised(randomIds);
+const settledPromises = await getSettledPromises(randomIds);
 
 const Home = () => {
 	return (
-		<div className="p-4 d-flex flex-wrap">
-			{settledPromises.map(element => 
+		<div className="p-4 d-flex flex-wrap justify-content-center">
+			Home
+			{/*{settledPromises.map(element => 
 				<Card
 					key={element.value.id}
 					image={element.value.image}
@@ -21,8 +22,8 @@ const Home = () => {
 					origin={element.value.origin.name}
 					location={element.value.location.name}
 				/>
-			)}
-		</div>
+			)} */}
+		</div>		
 	);
 };
 

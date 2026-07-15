@@ -6,7 +6,7 @@ const NotFoundPage = () => {
         <div className="container-fluid">
             <h1 className="text-center">This is not the page you're looking for...</h1>
             <Link to={"/"}>
-                <button>Go Home!</button>
+                <button className="btn" style={{color: "black"}}>Go Home!</button>
             </Link>
         </div>
     )
