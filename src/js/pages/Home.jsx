@@ -9,8 +9,7 @@ const settledPromises = await getSettledPromises(randomIds);
 const Home = () => {
 	return (
 		<div className="p-4 d-flex flex-wrap justify-content-center">
-			Home
-			{/*{settledPromises.map(element => 
+			{settledPromises.map(element => 
 				<Card
 					key={element.value.id}
 					image={element.value.image}
@@ -22,7 +21,7 @@ const Home = () => {
 					origin={element.value.origin.name}
 					location={element.value.location.name}
 				/>
-			)} */}
+			)}
 		</div>		
 	);
 };

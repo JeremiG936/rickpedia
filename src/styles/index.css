@@ -55,3 +55,7 @@ span {
     height: 100%;
     width: 55%;
 }
+
+#result-p {
+    font-size: small;
+}

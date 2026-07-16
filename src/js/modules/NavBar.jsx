@@ -18,7 +18,7 @@ const NavBar = () => {
                         </Link>
                     </div>
                     <div className="col">
-                        <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search item..." className="me-3" id="search-bar"></input>
+                        <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search..." className="me-3" id="search-bar"></input>
                         <Link to={searchTerm ? `/searchresult/${searchTerm}` : "*"}>
                             <button type="button" className="btn" id="search-btn">Search</button>
                         </Link>
@@ -26,12 +26,6 @@ const NavBar = () => {
                     <div className="col-3 d-flex justify-content-end">
                         <Link to={"/characters"}>
                             <button className="btn">Characters</button>
-                        </Link>
-                        <Link to={"/locations"}>
-                            <button className="btn">Locations</button>
-                        </Link>
-                        <Link to={"/episodes"}>
-                            <button className="btn">Episodes</button>
                         </Link>
                     </div>
                 </div>

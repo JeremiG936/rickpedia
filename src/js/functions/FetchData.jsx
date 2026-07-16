@@ -1,6 +1,14 @@
-export async function fetchCharacterData(searchTerm) {
+export async function fetchCharacterData(searchTerm, page = 1) {
     try {
-        if (typeof searchTerm === "number") {
+        if (!searchTerm) {
+             const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
+            if (!response.ok) {
+                throw new Error("Could not fetch data")
+            }
+            const data = response.json();
+            return data
+        }
+        else if (typeof searchTerm === "number") {
             const response = await fetch(`https://rickandmortyapi.com/api/character/${searchTerm}`);
             if (!response.ok) {
                 throw new Error("Could not fetch data")
@@ -9,7 +17,7 @@ export async function fetchCharacterData(searchTerm) {
             return data
         }
         else if (typeof searchTerm === "string") {
-            const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${searchTerm}`);
+            const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${searchTerm}&page=${page}`);
             if (!response.ok) {
                 throw new Error("Could not fetch data")
             }

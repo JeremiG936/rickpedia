@@ -6,8 +6,6 @@ import '../styles/index.css'
 import Layout from './modules/Layout';
 import Home from './pages/Home';
 import Characters from './pages/Characters';
-import Locations from './pages/Locations';
-import Episodes from './pages/Episodes';
 import SearchResult from './pages/SearchResult';
 import NotFoundPage from './pages/NotFoundPage';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -19,8 +17,6 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <Home />},
       {path: "/characters", element: <Characters />},
-      {path: "/locations", element: <Locations />},
-      {path: "/episodes", element: <Episodes />},
       {path: "/searchresult/:searchTerm", element: <SearchResult />},
       {path:"*", element: <NotFoundPage />}
     ]
